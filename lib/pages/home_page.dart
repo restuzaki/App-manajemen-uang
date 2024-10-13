@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(7),
+            padding: const EdgeInsets.all(10),
             child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 ],),
                 Row(children: [
                   Container(
-                    child: Icon(Icons.attach_money,color: const Color.fromARGB(255, 175, 76, 76) ),
+                    child: Icon(Icons.attach_money,color: Colors.red ),
                     decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(3)),
                     ),
                     SizedBox(width: 15,
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
           ),
           //set transaksi
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text("Transaction", style: GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold)),
           ),
           //list transaksi
@@ -83,14 +83,42 @@ class _HomePageState extends State<HomePage> {
               elevation: 10,
               child: ListTile(
                 trailing: Row(
-                children: [Icon(Icons.delete),Icon(Icons.add)
-                ],),
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.delete_forever_rounded),
+                    SizedBox(width: 10,),
+                    Icon(Icons.add)
+                    ],
+                ),
                 title: Text("Rp. 20.000"),
                 subtitle: Text("Makan"),
+                leading: Container(
+                        child: Icon(Icons.attach_money,color: Colors.red ),
+                        decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(3)),
+                        ),
+              ),
+            ),
+          ),
+        Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Card(
+              elevation: 10,
+              child: ListTile(
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.delete_forever_rounded),
+                    SizedBox(width: 10,),
+                    Icon(Icons.add)
+                    ],
+                ),
+                title: Text("Rp. 20.000.000"),
+                subtitle: Text("Gaji Bulanan"),
                 leading: Container(
                         child: Icon(Icons.attach_money,color: Colors.green ),
                         decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(3)),
                         ),
+              
               ),
             ),
           )
