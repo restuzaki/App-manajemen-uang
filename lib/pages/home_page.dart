@@ -14,11 +14,14 @@ class _HomePageState extends State<HomePage> {
     return SingleChildScrollView(
       child: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(7),
             child: Container(
-              child: Row(children: [
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                 Row(children: [
                   Container(
                     child: Icon(Icons.attach_money,color: Colors.green ),
@@ -27,11 +30,35 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(width: 15,
                     ),
                      Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Income",
-                        style:GoogleFonts.montserrat(color: Colors.white),
-                        ),Text("Rp. 3.800.000")
+                        style:GoogleFonts.montserrat(color: Colors.white, fontSize: 12),
+                        ),
+                        SizedBox(height: 4,),
+                        Text("Rp. 3.800.000",
+                        style:GoogleFonts.montserrat(color: Colors.white, fontSize: 14),)
+                      ],
+                    )
+                ],),
+                Row(children: [
+                  Container(
+                    child: Icon(Icons.attach_money,color: const Color.fromARGB(255, 175, 76, 76) ),
+                    decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(3)),
+                    ),
+                    SizedBox(width: 15,
+                    ),
+                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Expense",
+                        style:GoogleFonts.montserrat(color: Colors.white, fontSize: 12),
+                        ),
+                        SizedBox(height: 4,),
+                        Text("Rp. 3.800.000",
+                        style:GoogleFonts.montserrat(color: Colors.white, fontSize: 14),)
                       ],
                     )
                 ],)
@@ -41,6 +68,29 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                 color: Colors.grey[700],
                 borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+          ),
+          //set transaksi
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text("Transaction", style: GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold)),
+          ),
+          //list transaksi
+          Padding(
+            padding: const EdgeInsets.all(14),
+            child: Card(
+              elevation: 10,
+              child: ListTile(
+                trailing: Row(
+                children: [Icon(Icons.delete),Icon(Icons.add)
+                ],),
+                title: Text("Rp. 20.000"),
+                subtitle: Text("Makan"),
+                leading: Container(
+                        child: Icon(Icons.attach_money,color: Colors.green ),
+                        decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(3)),
+                        ),
               ),
             ),
           )
