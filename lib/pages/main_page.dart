@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projek_uang/pages/category_page.dart';
 import 'package:projek_uang/pages/home_page.dart';
+import 'package:projek_uang/pages/transaction_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -36,7 +37,13 @@ class _MainPageState extends State<MainPage> {
       ), preferredSize: Size.fromHeight(100)),
       floatingActionButton: Visibility(
         visible: (currentIndex == 0) ? true : false,
-        child: FloatingActionButton(onPressed: (){}, backgroundColor: Colors.blueAccent, child: Icon(Icons.add), )),
+        child: FloatingActionButton(onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => TransactionPage(), )).then( (value) {
+            setState(() {
+              
+            });
+          } );
+        }, backgroundColor: Colors.blueAccent, child: Icon(Icons.add), )),
       body: _children[currentIndex],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar:  BottomAppBar(
